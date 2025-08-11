@@ -17,3 +17,5 @@ data/raw/
 .DS_Store
 # Results (optional: allow committed small example files)
 results/models/*.pkl
+
+.env
