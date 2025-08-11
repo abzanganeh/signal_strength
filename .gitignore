@@ -1,0 +1,19 @@
+# Virtualenv
+.venv/
+venv/
+env/
+# PyCharm
+.idea/
+# Python cache
+__pycache__/
+*.py[cod]
+# Notebooks checkpoints
+.ipynb_checkpoints/
+# Data (do not commit raw / large datasets)
+data/raw/
+# Jupyter
+.jupyter/
+# Mac
+.DS_Store
+# Results (optional: allow committed small example files)
+results/models/*.pkl
