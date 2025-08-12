@@ -42,6 +42,22 @@ Accurate signal prediction helps satellite internet providers:
 - **Tools**: `Jupyter Notebook`, `PyCharm`, `Git`, `pytest`, `dotenv`, `yaml`  
 
 ---
+## Data Sources & Usage
+This project uses two distinct weather data sources for different modeling stages:
+| Source         | Purpose                                                                   | API Used          |
+|----------------|---------------------------------------------------------------------------|-------------------|
+| OpenWeatherMap | Real-time weather data for training and testing models.                   |openweathermap.org |
+| Open-Meteo     |Historical weather data for estimating signal strength in unseen conditions| open-meteo.com    |
+
+### Training/Test Phase: 
+Models are trained and validated using real-time weather data collected from multiple cities via OpenWeatherMap.
+
+### Estimation Phase:
+Historical weather data from Open-Meteo is used to simulate signal strength in past conditions, enabling retrospective analysis and generalization testing.
+
+This separation ensures data integrity, avoids leakage, and supports robust model evaluation across time and geography.
+
+---
 
 ## Location Coverage
 
