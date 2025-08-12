@@ -1,6 +1,6 @@
 # Weather API base URL
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
-BASE_URL_HIST = "https://api.open-meteo.com/v1/forecast"
+BASE_URL_HISTORICAL = "https://archive-api.open-meteo.com/v1/archive"
 
 # Expected schema for weather data
 EXPECTED_COLUMNS = [

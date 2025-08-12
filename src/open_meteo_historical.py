@@ -2,17 +2,14 @@ import os
 import requests
 import pandas as pd
 from datetime import datetime
-
+from src.utils.config import START_DATE, END_DATE
 from src.utils.logger import get_logger
-from src.utils.constants import DEFAULT_LOCATIONS, EXPECTED_COLUMNS, DEFAULT_TIMEZONE
+from src.utils.constants import DEFAULT_LOCATIONS, EXPECTED_COLUMNS, DEFAULT_TIMEZONE, BASE_URL_HISTORICAL
 from src.utils.config_loader import load_project_root
 
 logger = get_logger(__name__)
 project_root = load_project_root()
 
-BASE_URL = "https://archive-api.open-meteo.com/v1/archive"
-START_DATE = "2024-07-01"
-END_DATE = "2024-07-31"
 OUTPUT_DIR = os.path.join(project_root, "data", "processed")
 
 def fetch_open_meteo(city, lat, lon):
@@ -35,7 +32,7 @@ def fetch_open_meteo(city, lat, lon):
         "hourly": EXPECTED_COLUMNS[:-2],  # exclude 'location' and 'time'
         "timezone": DEFAULT_TIMEZONE
     }
-    response = requests.get(BASE_URL, params=params)
+    response = requests.get(BASE_URL_HISTORICAL, params=params)
     response.raise_for_status()
     data = response.json()
     df = pd.DataFrame(data["hourly"])
