@@ -137,7 +137,7 @@ This project avoids opaque automation and AI shortcuts. Every step is:
 
 ## Author
 Alireza Barzin Zanganeh 
-Senior QA Automation Engineer | Regression Modeling Enthusiast 
+Machine Learning Engineer | Backend & QA Automation
 Committed to structure, transparency, and continuous improvement.
 
 ## License
