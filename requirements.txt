@@ -123,3 +123,4 @@ widgetsnbextension==4.0.14
 xgboost==3.0.3
 
 python-dotenv~=1.1.1
+pytest~=8.4.1

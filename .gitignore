@@ -19,3 +19,6 @@ data/raw/
 results/models/*.pkl
 
 .env
+# Ignore local config files
+config.yaml
+.env
