@@ -3,7 +3,7 @@
 
 ---
 
-## 🧭 Overview
+## Overview
 
 This project builds regression models to predict **satellite signal strength (in dBm)** using weather and atmospheric data. It follows a structured, reproducible workflow:
 
@@ -14,7 +14,7 @@ This project builds regression models to predict **satellite signal strength (in
 
 ---
 
-## 💼 Business Relevance
+## Business Relevance
 
 Accurate signal prediction helps satellite internet providers:
 
@@ -25,7 +25,7 @@ Accurate signal prediction helps satellite internet providers:
 
 ---
 
-## 🎯 Technical Goals
+## Technical Goals
 
 - Collect real-time and historical weather data from public APIs  
 - Simulate signal degradation using physics-inspired models  
@@ -35,7 +35,7 @@ Accurate signal prediction helps satellite internet providers:
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - **Languages & Libraries**: `Python`, `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `xgboost`, `shap`, `requests`  
 - **APIs**: `OpenWeatherMap` (free tier)  
@@ -43,7 +43,7 @@ Accurate signal prediction helps satellite internet providers:
 
 ---
 
-## 🌍 Location Coverage
+## Location Coverage
 
 Weather data is collected from diverse global locations to ensure model generalization:
 
@@ -60,7 +60,7 @@ Weather data is collected from diverse global locations to ensure model generali
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```
 Satellite-Signal-Prediction/
 │  ├── data/ 
