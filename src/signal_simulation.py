@@ -3,9 +3,13 @@ import numpy as np
 import pandas as pd
 from datetime import datetime, UTC
 import random
-
+from src.utils.logger import get_logger
+from src.utils.config_loader import load_project_root
 from debugpy.common import timestamp
 
+
+logger = get_logger(__name__)
+project_root = load_project_root()
 
 def simulate_realistic_signal_strength(row, base_dbm=-70.0):
     """
@@ -168,12 +172,6 @@ def simulate_from_csv(input_path, output_subdir="data/simulated"):
         input_path: Path to processed weather CSV.
         output_subdir: Subdirectory under project root to save results.
     """
-    from src.utils.logger import get_logger
-    from src.utils.config_loader import load_project_root
-    
-    logger = get_logger(__name__)
-    project_root = load_project_root()
-    
     output_dir = os.path.join(project_root, output_subdir)
     os.makedirs(output_dir, exist_ok=True)
 
@@ -214,14 +212,14 @@ def simulate_from_csv(input_path, output_subdir="data/simulated"):
     print(f"Simulation results saved to data/simulated/signal_latest.csv")
     
     # Display signal characteristics
-    print(f"\n📊 Signal Strength Statistics:")
+    print(f"\n Signal Strength Statistics:")
     print(f"  Mean: {df['signal_dbm'].mean():.2f} dBm")
     print(f"  Std:  {df['signal_dbm'].std():.2f} dBm") 
     print(f"  Min:  {df['signal_dbm'].min():.2f} dBm")
     print(f"  Max:  {df['signal_dbm'].max():.2f} dBm")
     print(f"  Missing values: {df['signal_dbm'].isna().sum()}")
     
-    return df
+    return df, output_path
 
 # Keep your original simulate_signal_strength for comparison (rename it)
 def simulate_signal_strength_simple(row, base_dbm=-50.0):

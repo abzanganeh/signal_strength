@@ -1,3 +1,13 @@
 timestamp,engineered_file,signal_file
 2025-08-13 01:48:21,weather_engineered_latest.csv,signal_latest.csv
 2025-08-13 18:28:53,weather_engineered_latest.csv,signal_latest.csv
+2025-08-14 06:12:03,weather_historical_20250813_0006.csv,signal_latest.csv,lr,0.0,0.0,1.0
+2025-08-14 06:13:34,weather_historical_20250813_0006.csv,signal_latest.csv,rf,0.0,0.0,1.0
+2025-08-14 06:13:36,weather_historical_20250813_0006.csv,signal_latest.csv,xgb,0.06,0.72,0.98
+2025-08-14 06:13:39,weather_historical_20250813_0006.csv,signal_latest.csv,poly,0.0,0.0,1.0
+2025-08-14 06:20:10,weather_historical_20250813_0006.csv,signal_latest.csv,stack,0.0,0.0,1.0
+2025-08-14 06:33:03,weather_historical_20250813_0006.csv,signal_latest.csv,lr,0.0,0.0,1.0
+2025-08-14 06:34:17,weather_historical_20250813_0006.csv,signal_latest.csv,rf,0.0,0.01,1.0
+2025-08-14 06:34:19,weather_historical_20250813_0006.csv,signal_latest.csv,xgb,0.06,0.72,0.98
+2025-08-14 06:34:21,weather_historical_20250813_0006.csv,signal_latest.csv,poly,0.0,0.0,1.0
+2025-08-14 06:40:14,weather_historical_20250813_0006.csv,signal_latest.csv,stack,0.0,0.0,1.0

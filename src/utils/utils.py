@@ -21,3 +21,11 @@ def validate_simulation_input(df, required_columns):
     if missing:
         raise ValueError(f"Missing required columns for simulation: {missing}")
     print("Input schema validated.")
+
+def get_latest_historical_file(project_root):
+    processed_dir = os.path.join(project_root, "data", "processed")
+    files = [f for f in os.listdir(processed_dir) if f.startswith("weather_historical_")]
+    if not files:
+        raise FileNotFoundError(f"No historical weather files found in {processed_dir}")
+    latest_file = max(files, key=lambda x: os.path.getctime(os.path.join(processed_dir, x)))
+    return os.path.join("data", "processed", latest_file)
