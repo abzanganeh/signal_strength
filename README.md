@@ -58,7 +58,40 @@ Historical weather data from Open-Meteo is used to simulate signal strength in p
 This separation ensures data integrity, avoids leakage, and supports robust model evaluation across time and geography.
 
 ---
+## Key Files
+| Key                           | Purpose                        |
+|-------------------------------|--------------------------------|
+| weather_engineered_latest.csv | Latest engineered weather data |
+| signal_latest.csv             | Latest simulated signal data   |
+| run_log.csv                   | Manifest of all pipeline runs  |
 
+---
+## Modules
+src/preprocessing.py: Cleans and engineers weather features
+
+src/signal_simulation.py: Applies attenuation model to simulate signal strength
+
+src/utils/utils.py: File helpers, logging, and safe naming
+
+src/open_meteo_historical.py: Collects raw weather data
+
+---
+## Features Used in Simulation
+rain_rate
+
+relative_humidity_2m
+
+pressure_msl
+
+cloudcover
+
+windspeed_10m
+
+temperature_celsius
+
+Time features: hour, day, month, weekday
+
+---
 ## Location Coverage
 
 Weather data is collected from diverse global locations to ensure model generalization:
@@ -75,9 +108,24 @@ Weather data is collected from diverse global locations to ensure model generali
 - Sydney 🇦🇺  
 
 ---
-
-## Project Structure
+## Running the Pipeline
 ```
+python main.py
+```
+
+### Optional flags:
+```
+python main.py --input data/processed/weather_engineered_latest.csv
+```
+---
+
+## Audit Trail
+Each run is logged to run_log.csv with timestamp and filenames.
+
+---
+---
+## Project Structure
+
 Satellite-Signal-Prediction/
 │  ├── data/ 
 │  ├── raw/ # Unprocessed weather data from API 
@@ -116,7 +164,12 @@ Satellite-Signal-Prediction/
 ├── config.yaml # Optional config file for project root
 ├── .gitignore # Git exclusions
 ├── LICENSE # Project license
-├── main.py # Entry point (optional)
+├── main.py
+│   ├── Collects historical weather data (if needed)
+│   ├── Preprocesses and engineers features
+│   ├── Simulates signal strength
+│   └── Logs run metadata to run_log.csv
+│
 ├── README.md # Project documentation
 ├── project.llm
 └── requirements.txt # Python dependencies

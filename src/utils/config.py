@@ -18,3 +18,24 @@ END_DATE = "2023-12-31"
 # Data collection options
 USE_CACHE = True
 SAVE_RAW_DATA = True
+
+REQUIRED_FOR_SIMULATION = [
+    "time",
+    "relative_humidity_2m",
+    "pressure_msl",
+    "cloudcover",
+    "windspeed_10m",
+    "rain_rate",
+    "location",
+    "temperature_celsius",
+    "hour",
+    "day",
+    "month",
+    "weekday"
+]
+
+DROP_COLUMNS = [
+    "humidity_ratio",
+    "wind_power"
+]
+
